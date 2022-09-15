@@ -9,7 +9,7 @@ public class Member {
     private boolean withdrawal;             //退会　退会の時にture
     private LocalDate withdrawalDate;       //退会日
 
-    //コンストラクターにて、名前、年齢、入会日を初期設定。退会フラグ、退会日はNullを代入
+    //コンストラクターにて、名前、年齢、入会日を初期設定。退会フラグはfalse、退会日はnullを代入
     public Member(String name, int age, LocalDate joinDate) {
         this.name = name;
         this.age = age;
