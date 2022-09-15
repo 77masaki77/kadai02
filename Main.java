@@ -21,15 +21,15 @@ public class Main {
         //処理1 会員一蘭の表示　for文
         System.out.println("会員一覧");
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isWithdrawal() == false) {
+            if (!memberList.get(i).isWithdrawal()) {
                 memberList.get(i).showProfile();
             }
         }
 
         //処理2 会員の中で40歳以上の方を表示 拡張for文、if文
+        System.out.println("40歳以上方のみを表示");
         for (Member member : memberList) {
-            if (member.getAge() > 40) {
-                System.out.println("40歳以上方のみを表示");
+            if (member.getAge() >= 40) {
                 member.showProfile();
             }
         }
@@ -48,8 +48,7 @@ public class Main {
         //処理4 再度会員一覧の表示　退会した方は非表示
         System.out.println("会員一覧");
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).isWithdrawal()) {
-            } else {
+            if (!memberList.get(i).isWithdrawal()) {
                 memberList.get(i).showProfile();
             }
         }
