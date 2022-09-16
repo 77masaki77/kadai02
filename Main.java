@@ -19,6 +19,7 @@ public class Main {
         memberList.add(new Member("akito", 21, oneMonthAgo));
 
         //処理1 会員一蘭の表示　for文
+        //追記：処理４との比較。ここでは学習のため、わざと、!memberList.get(i).isWithdrawal()を使用
         System.out.println("会員一覧");
         for (int i = 0; i < memberList.size(); i++) {
             if (!memberList.get(i).isWithdrawal()) {
@@ -46,9 +47,10 @@ public class Main {
         }
 
         //処理4 再度会員一覧の表示　退会した方は非表示
+        //メソッド変更：if分の条件に、新しく用意したisActive()メソッドを使用
         System.out.println("会員一覧");
         for (int i = 0; i < memberList.size(); i++) {
-            if (!memberList.get(i).isWithdrawal()) {
+            if (memberList.get(i).isActive()) {
                 memberList.get(i).showProfile();
             }
         }

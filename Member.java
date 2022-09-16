@@ -26,6 +26,20 @@ public class Member {
         System.out.println();
     }
 
+    //入会中であるかどうかをboolean型で返すメソッド。入会中の時true。
+    //入会中条件：入会日が今日より過去かつ、退会フラグがfalse。
+    public boolean isActive() {
+        LocalDate today = LocalDate.now();
+        boolean isActiveBoolean;
+
+        if ((joinDate.compareTo(today) <= 0) && (withdrawal == false)) {
+            isActiveBoolean = true;
+        } else {
+            isActiveBoolean = false;
+        }
+        return isActiveBoolean;
+    }
+
     //以下は全て、getter,setterを実装
     public String getName() {
         return name;
