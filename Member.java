@@ -30,14 +30,7 @@ public class Member {
     //入会中条件：入会日が今日より過去かつ、退会フラグがfalse。
     public boolean isActive() {
         LocalDate today = LocalDate.now();
-        boolean isActiveBoolean;
-
-        if ((joinDate.compareTo(today) <= 0) && (withdrawal == false)) {
-            isActiveBoolean = true;
-        } else {
-            isActiveBoolean = false;
-        }
-        return isActiveBoolean;
+        return (joinDate.equals(today) || joinDate.before(today) && !withdrawal
     }
 
     //以下は全て、getter,setterを実装
