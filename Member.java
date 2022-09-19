@@ -28,9 +28,11 @@ public class Member {
 
     //入会中であるかどうかをboolean型で返すメソッド。入会中の時true。
     //入会中条件：入会日が今日より過去かつ、退会フラグがfalse。
+    //修正：そもそもメソッド内でif文を削除
+    //条件変更：内容は同じであるが、(joinDate.compareTo(today) <= 0) && (withdrawal == false)より可読性向上のため。
     public boolean isActive() {
         LocalDate today = LocalDate.now();
-        return (joinDate.equals(today) || joinDate.before(today) && !withdrawal
+        return (joinDate.equals(today) || joinDate.isBefore(today) && !withdrawal);
     }
 
     //以下は全て、getter,setterを実装
